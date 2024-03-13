@@ -1,7 +1,5 @@
 package com.integrationninjas.springbootexample.entity;
 
-import java.time.LocalDate;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -25,8 +23,7 @@ public class Salary {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private double amount;
-    private LocalDate date;
+    private double amount;    
 
     @ManyToOne
     @JoinColumn(name = "employee_id")
