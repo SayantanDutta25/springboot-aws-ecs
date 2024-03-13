@@ -2,15 +2,23 @@ package com.integrationninjas.springbootexample.service;
 
 import java.util.List;
 
-import com.integrationninjas.springbootexample.dto.SalaryDto;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.integrationninjas.springbootexample.entity.Salary;
+import com.integrationninjas.springbootexample.repository.SalaryRepository;
 
 
-public interface SalaryService {
+@Service
+public class SalaryService {
 
-   // String createSalary(SalaryDto salaryDto);
+    @Autowired
+    private SalaryRepository salaryRepository;
 
-    List<SalaryDto> getSalary();
+    public List<Salary> getAllSalaries() {
+        return salaryRepository.findAll();
+    }
 
-	double calculateSalary(Long employeeId);
+    // Other methods for salary management
 }
 
