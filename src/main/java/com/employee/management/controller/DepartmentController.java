@@ -1,6 +1,7 @@
 package com.employee.management.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -31,11 +32,11 @@ public class DepartmentController {
 			return departmentService.getAllDepartments();
 		}
 
-//		// displaying department by id
-//		@GetMapping("/departments/{id}")
-//		public Department getDepartment(@PathVariable int id){
-//			return departmentService.getDepartment(id);
-//		}
+		// displaying department by id
+		@GetMapping("/departments/{id}")
+		public Optional<Department> getDepartment(@PathVariable int id){
+			return departmentService.getDepartment(id);
+		}
 		
 		// inserting department
 		@PostMapping("/departments")
