@@ -1,12 +1,16 @@
 package com.integrationninjas.springbootexample.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.List;
+
+import com.integrationninjas.springbootexample.dto.SalaryDto;
 
 
 public interface SalaryService {
 
- //   String createUser(UserDto userDto);
+   // String createSalary(SalaryDto salaryDto);
 
-   // List<UserDto> getUsers();
+    List<SalaryDto> getSalary();
+
+	double calculateSalary(Long employeeId);
 }
 
