@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.integrationninjas.springbootexample.dao.SalaryDao;
+import com.integrationninjas.springbootexample.dto.SalaryDto;
 import com.integrationninjas.springbootexample.entity.Salary;
 import com.integrationninjas.springbootexample.service.SalaryService;
 
