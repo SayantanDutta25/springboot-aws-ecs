@@ -2,6 +2,7 @@ package com.integrationninjas.springbootexample.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -43,6 +44,15 @@ public class UserServiceImpl implements UserService {
             });
         }
         return dtoList;
+    }
+    
+//    public List<User> getAllEmployees() {
+//        return employeeRepository.findAll();
+//    }
+
+    public User getEmployeeById(Long id) {
+        return userDao.findById(id)
+            .orElseThrow(() -> new NoSuchElementException("User not found"));
     }
     
 }

@@ -14,13 +14,9 @@ import lombok.Setter;
 @Table(name = "dept")
 public class Dept {
 
-   // @Id
-  //  @GeneratedValue(strategy = GenerationType.IDENTITY)
-   // private Long id;
-
-	@Id
-	@Column(nullable = false)
-    private String deptID;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long deptId;
 
     @Column(nullable = false)
     private String deptName;

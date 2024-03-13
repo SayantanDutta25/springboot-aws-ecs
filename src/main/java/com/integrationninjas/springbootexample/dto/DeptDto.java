@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 public class DeptDto {
 	
-    private String deptID;
+    private Long deptId;
     private String deptName;
     }

@@ -26,5 +26,11 @@ public class User {
 
     @Column(nullable = false, unique = true)
     private String email;
+    
+    private double salary;
+    
+    @ManyToOne
+    @JoinColumn(name = "deptid")
+    private Dept dept;
 
 }
