@@ -1,6 +1,7 @@
 package com.employee.management.service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,4 +56,25 @@ public class EmployeeService {
 			employeeRepository.save(emp);
 		}
 	}
+	
+	
+	public Employee getHighestPaidEmployee() {
+       // List<Employee> employees = employeeRepository.findAll();
+        List<Employee> employees = (List<Employee>)employeeRepository.findAll(); 
+
+        if (employees.isEmpty()) {
+            throw new NoSuchElementException("No employees found");
+        }
+        
+     // Find the highest paid employee
+        Employee highestPaidEmployee = employees.get(0);
+        for (Employee employee : employees) {
+            if (employee.getSalary().getAmount() > highestPaidEmployee.getSalary().getAmount()) {
+                highestPaidEmployee = employee;
+            }
+        }
+
+        return highestPaidEmployee;
+    }
 }
+

@@ -67,4 +67,9 @@ public class EmployeeController {
 	public void patchEmployeeByID(@RequestBody Employee e, @PathVariable int id) {
 		employeeService.patchEmployee(e, id);
 	}
+	
+	@GetMapping("/employees/highest-paid")
+    public Employee getHighestPaidEmployee() {
+        return employeeService.getHighestPaidEmployee();
+    }
 }
