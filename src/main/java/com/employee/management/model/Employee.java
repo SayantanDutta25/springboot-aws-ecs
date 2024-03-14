@@ -31,6 +31,10 @@ public class Employee {
 	@JoinColumn(name="department_id")
 	private Department department;
 	
+	@ManyToOne
+	@JoinColumn(name="salary_id")
+	private Salary salary;
+	
 	public Employee(){
 		
 	}
@@ -77,6 +81,14 @@ public class Employee {
 
 	public void setDepartment(Department department) {
 		this.department = department;
+	}
+	
+	public Salary getSalary() {
+		return salary;
+	}
+
+	public void setSalary(Salary salary) {
+		this.salary = salary;
 	}
 	
 }
