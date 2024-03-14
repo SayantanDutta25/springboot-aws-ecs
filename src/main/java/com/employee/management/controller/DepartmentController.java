@@ -56,11 +56,11 @@ public class DepartmentController {
 			departmentService.deleteAllDepartment();
 		}
 
-//		// deleting department by id
-//		@DeleteMapping("departments/{id}")
-//		public void deleteDepartmentByID(@RequestBody Department d, @PathVariable int id){
-//			departmentService.deleteDepartmentByID(id);
-//		}
+		// deleting department by id
+		@DeleteMapping("departments/{id}")
+		public void deleteDepartmentByID(@RequestBody Department d, @PathVariable int id){
+			departmentService.deleteDepartmentByID(id);
+		}
 
 		// updating/ patching department by id
 		@PatchMapping("departments/{id}")

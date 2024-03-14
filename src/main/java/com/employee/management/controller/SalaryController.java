@@ -56,11 +56,11 @@ public class SalaryController {
 			salaryService.deleteAllSalary();
 		}
 
-//		// deleting salary by id
-//		@DeleteMapping("salary/{id}")
-//		public void deleteDepartmentByID(@RequestBody Department d, @PathVariable int id){
-//			departmentService.deleteDepartmentByID(id);
-//		}
+		// deleting salary by id
+		@DeleteMapping("salary/{id}")
+		public void deleteSalaryByID(@RequestBody Salary s, @PathVariable int id){
+			salaryService.deleteSalaryByID(id);
+		}
 
 		// updating/ patching salary by id
 		@PatchMapping("salary/{id}")

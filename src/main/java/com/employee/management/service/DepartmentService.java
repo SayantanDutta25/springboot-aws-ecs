@@ -44,10 +44,10 @@ public class DepartmentService {
 		departmentRepository.deleteAll();
 	}
 	
-//	// deleting department by id
-//	public void deleteDepartmentByID(int id){
-//		departmentRepository.delete(id);
-//	}
+	// deleting department by id
+	public void deleteDepartmentByID(int id){
+		departmentRepository.deleteById(id);
+	}
 	
 	//patching/updating department by id
 	public void patchDepartment(Department d, int id) {

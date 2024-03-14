@@ -44,10 +44,10 @@ public class EmployeeService {
 		employeeRepository.deleteAll();
 	}
 	
-//	// deleting employee by id
-//	public void deleteEmployeeByID(int id){
-//		employeeRepository.delete(id);
-//	}
+	// deleting employee by id
+	public void deleteEmployeeByID(int id){
+		employeeRepository.deleteById(id); 
+	}
 	
 	//patching/updating employee by id
 	public void patchEmployee(Employee emp, int id) {

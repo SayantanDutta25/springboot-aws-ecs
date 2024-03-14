@@ -56,11 +56,11 @@ public class EmployeeController {
 		employeeService.deleteAllEmployees();
 	}
 
-//	// deleting employee by id
-//	@DeleteMapping("employees/{id}")
-//	public void deleteEmployeeByID(@RequestBody Employee e, @PathVariable int id){
-//		employeeService.deleteEmployeeByID(id);
-//	}
+	// deleting employee by id
+	@DeleteMapping("employees/{id}")
+	public void deleteEmployeeByID(@RequestBody Employee e, @PathVariable int id){
+		employeeService.deleteEmployeeByID(id);
+	}
 
 	// updating/ patching employee by id
 	@PatchMapping("employees/{id}")

@@ -39,15 +39,15 @@ public class SalaryService {
 		}
 	}
 	
-	// deleting all salarys
+	// deleting all salary
 	public void deleteAllSalary(){
 		salaryRepository.deleteAll();
 	}
 	
-//	// deleting salary by id
-//	public void deleteDepartmentByID(int id){
-//		departmentRepository.delete(id);
-//	}
+	// deleting salary by id
+	public void deleteSalaryByID(int id){
+		salaryRepository.deleteById(id);
+	}
 	
 	//patching/updating salary by id
 	public void patchSalary(Salary s, int id) {
