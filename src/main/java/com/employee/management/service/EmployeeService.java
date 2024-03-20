@@ -8,7 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.employee.management.model.Employee;
+import com.employee.management.model.Salary;
 import com.employee.management.repository.EmployeeRepository;
+
+import jakarta.transaction.Transactional;
 
 // employee service class
 @Service
@@ -76,5 +79,6 @@ public class EmployeeService {
 
         return highestPaidEmployee;
     }
+	
 }
 

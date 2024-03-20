@@ -15,8 +15,14 @@ public class Salary {
 	@Column(name="salary_id")
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int salary_ID;
-	private String range;
-	private int amount;
+	
+	@Column(name = "`range`") // Enclose 'range' in backticks to avoid conflict with reserved keyword
+    private String range;
+	
+	private double amount;
+	
+    @Column(name = "increased_salary")
+    private double increasedSalary;
 	
 	public Salary() {
 	
@@ -27,11 +33,12 @@ public class Salary {
 		this.salary_ID = salaryID;
 	}
 	
-	public Salary(int salaryID, String range, int amount) {
+	public Salary(int salaryID, String range, int amount, int increasedSal) {
 		super();
 		this.salary_ID = salaryID;
 		this.range = range;
 		this.amount = amount;
+		this.increasedSalary = increasedSal;
 	}
 
 	public int getSalary_ID() {
@@ -50,12 +57,32 @@ public class Salary {
 		this.range = range;
 	}
 
-	public int getAmount() {
+	public double getAmount() {
 		return amount;
 	}
 
-	public void setAmount(int amount) {
+	public void setAmount(double amount) {
 		this.amount = amount;
 	}
+	
+	public double getIncreasedSalary() {
+        return increasedSalary;
+    }
+	
+	public void setIncreasedSalary(double increasedSalary) {
+        this.increasedSalary = increasedSalary;
+    }
+	
+	public static class IncrementRequest {
+        private double percentage;
+
+        public double getPercentage() {
+            return percentage;
+        }
+
+        public void setPercentage(double percentage) {
+            this.percentage = percentage;
+        }
+    }
 
 }
