@@ -68,7 +68,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `salary` WRITE;
 /*!40000 ALTER TABLE `salary` DISABLE KEYS */;
-INSERT INTO `salary` VALUES (1,'Trainee','10000'),(2,'Intermediate','20000'),(3,'Advanced','30000');
+INSERT INTO `salary` VALUES (1,'Trainee','10000',0),(2,'Intermediate','20000',0),(3,'Advanced','30000',0);
 /*!40000 ALTER TABLE `salary` ENABLE KEYS */;
 UNLOCK TABLES;
 
