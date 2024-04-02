@@ -1,7 +1,7 @@
 name: Deploy to AWS ECS
 on:
   push:
-    branches: [ deploy-to-ecs-2 ]
+    branches: [ deploy-to-ecs-terraform ]
 jobs:
   build-and-deploy:
     runs-on: [ ubuntu-latest ]
@@ -56,5 +56,5 @@ jobs:
         with:
           task-definition: ${{ steps.task-def.outputs.task-definition }}
           service: springboot-example-service
-          cluster: DevCluster2
+          cluster: DevClusterTerraform
           wait-for-service-stability: true
