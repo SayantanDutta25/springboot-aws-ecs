@@ -13,7 +13,7 @@ public class Salary {
 
 	@Id
 	@Column(name="salary_id")
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	//@GeneratedValue(strategy = GenerationType.AUTO)
 	private int salary_ID;
 	
 	@Column(name = "`range`") // Enclose 'range' in backticks to avoid conflict with reserved keyword
