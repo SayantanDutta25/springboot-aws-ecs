@@ -1,9 +1,9 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-1:471112971975:task-definition/springboot-app-task-definition:2",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-2:471112971975:task-definition/springboot-app-task-definition:2",
     "containerDefinitions": [
         {
             "name": "springboot-example",
-            "image": "471112971975.dkr.ecr.us-east-1.amazonaws.com/springboot-example:latest",
+            "image": "471112971975.dkr.ecr.us-east-2.amazonaws.com/springboot-example:latest",
             "cpu": 0,
             "portMappings": [
                 {
@@ -25,7 +25,7 @@
                 "options": {
                     "awslogs-create-group": "true",
                     "awslogs-group": "/ecs/springboot-app-task-definition",
-                    "awslogs-region": "us-east-1",
+                    "awslogs-region": "us-east-2",
                     "awslogs-stream-prefix": "ecs"
                 },
                 "secretOptions": []
