@@ -30,6 +30,8 @@ jobs:
 
       - name: Deploy to EC2
         run: |
+          # Create known_hosts file
+          run: touch ~/.ssh/known_hosts
         
           # Add EC2 instance host key to known hosts file
           run: ssh-keyscan -H ec2-3-22-60-46.us-east-2.compute.amazonaws.com >> ~/.ssh/known_hosts
