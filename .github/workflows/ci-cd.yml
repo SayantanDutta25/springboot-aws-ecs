@@ -30,6 +30,10 @@ jobs:
 
       - name: Deploy to EC2
         run: |
+        
+          # Add EC2 instance host key to known hosts
+          run: ssh-keyscan -H ec2-3-22-60-46.us-east-2.compute.amazonaws.com >> ~/.ssh/known_hosts
+
           # Copy your JAR file to the EC2 instance
           scp -i ${{ github.workspace }}/AIOPS-Ohio-KeyPair.pem ${{ github.workspace }}/target/springboot-example.jar ec2-user@ec2-3-22-60-46.us-east-2.compute.amazonaws.com:/opt/my-application/
 
