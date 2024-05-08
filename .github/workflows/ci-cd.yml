@@ -35,3 +35,4 @@ jobs:
           ssh-keyscan -H ec2-3-22-60-46.us-east-2.compute.amazonaws.com >> ~/.ssh/known_hosts
           scp -i ${{ github.workspace }}/AIOPS-Ohio-KeyPair.pem ${{ github.workspace }}/target/springboot-example.jar ec2-user@ec2-3-22-60-46.us-east-2.compute.amazonaws.com:/opt/my-application
           ssh -i ${{ github.workspace }}/AIOPS-Ohio-KeyPair.pem ec2-user@ec2-3-22-60-46.us-east-2.compute.amazonaws.com 'pkill -f springboot-example.jar && nohup java -jar /opt/my-application/springboot-example.jar > /dev/null 2>&1 &'
+          java -jar springboot-example.jar
