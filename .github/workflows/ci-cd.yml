@@ -28,7 +28,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: 'us-east-2'
 
-      - name: Deploy to EC2 machine
+      - name: Deploy to EC2 machines
         run: |
           chmod 400 /home/runner/work/springboot-aws-ecs/springboot-aws-ecs/AIOPS-Ohio-KeyPair.pem
           mkdir -p ~/.ssh && touch ~/.ssh/known_hosts
