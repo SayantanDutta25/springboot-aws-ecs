@@ -1,25 +1,33 @@
+package com.employee.management.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Version; // Import the Version annotation
+
 @Entity
-@Table(name = "department")
+@Table(name="department")
 public class Department {
 
     @Id
-    @Column(name = "department_id")
+    @Column(name="department_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int department_ID;
-    
-    @Column(name = "short_name")
+
+    @Version // Add the Version annotation
+    private int version; // New field for versioning
+
     private String short_Name;
-    
-    @Column(name = "department_name")
     private String department_Name;
-    
-    @Version
-    private int version;
 
     public Department() {
+
     }
 
-    public Department(int departmentID) {
+    public Department(int departmentID){
         super();
         this.department_ID = departmentID;
     }
