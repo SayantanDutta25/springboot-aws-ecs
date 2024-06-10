@@ -1,22 +1,25 @@
 package com.employee.management;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
-@ComponentScan(basePackages ="com.employee.management")
 public class Application {
 
-	//logging
-	static final Logger logger  = LogManager.getLogger(Application.class.getName());
-	
-	public static void main(String[] args) {
-		logger.info("entered application");
-		SpringApplication.run(Application.class, args);
+    public static void main(String[] args) {
+        ConfigurableApplicationContext context = SpringApplication.run(Application.class, args);
 
-	}
-
+        // Add shutdown hook to ensure cleanup
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            try {
+                context.close();
+                System.out.println("Application context closed. Resources cleaned up.");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }));
+    }
 }
+
+
