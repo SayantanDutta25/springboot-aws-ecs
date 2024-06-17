@@ -32,6 +32,6 @@ jobs:
         run: |
           chmod 400 /home/runner/work/springboot-aws-ecs/springboot-aws-ecs/AIOPS-Ohio-KeyPair.pem
           mkdir -p ~/.ssh && touch ~/.ssh/known_hosts
-          ssh-keyscan -H ec2-3-131-36-79.us-east-2.compute.amazonaws.com >> ~/.ssh/known_hosts
-          scp -i ${{ github.workspace }}/AIOPS-Ohio-KeyPair.pem ${{ github.workspace }}/target/springboot-example.jar ec2-user@ec2-3-131-36-79.us-east-2.compute.amazonaws.com:/opt/springboot-application
-          ssh -i ${{ github.workspace }}/AIOPS-Ohio-KeyPair.pem ec2-user@ec2-3-131-36-79.us-east-2.compute.amazonaws.com 'pkill -f springboot-example.jar && nohup java -jar /opt/springboot-application/springboot-example.jar > /dev/null 2>&1 &'
+          ssh-keyscan -H ec2-3-128-142-229.us-east-2.compute.amazonaws.com >> ~/.ssh/known_hosts
+          scp -i ${{ github.workspace }}/AIOPS-Ohio-KeyPair.pem ${{ github.workspace }}/target/springboot-example.jar ec2-user@ec2-3-128-142-229.us-east-2.compute.amazonaws.com:/opt/springboot-application
+          ssh -i "${{ github.workspace }}/AIOPS-Ohio-KeyPair.pem" ec2-user@ec2-3-128-142-229.us-east-2.compute.amazonaws.com 'sudo pkill -f springboot-example.jar && sudo java -jar /opt/springboot-application/springboot-example.jar > /var/log/application.log 2>&1 &'
