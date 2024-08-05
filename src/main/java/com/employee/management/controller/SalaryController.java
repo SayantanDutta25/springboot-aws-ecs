@@ -1,6 +1,7 @@
 package com.employee.management.controller;
 
 import java.util.List;
+
 import java.util.Optional;
 
 import org.apache.logging.log4j.LogManager;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.employee.management.model.Salary;
 import com.employee.management.service.SalaryService;
+import com.employee.management.service.MetricsService;
 
 @RestController
 public class SalaryController {
@@ -28,9 +30,14 @@ public class SalaryController {
 	@Autowired
 	private SalaryService salaryService;
 	
+	@Autowired
+	private MetricsService metricsService;
+	
 	// displaying list of all salary
 		@GetMapping("/salary")
 		public List<Salary> getAllSalary(){
+	        metricsService.recordHttpRequest("/salary");
+	        metricsService.recordEndpointHit("/salary");
 			return salaryService.getAllSalaries();
 		}
 
