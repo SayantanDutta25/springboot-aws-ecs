@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.employee.management.model.Department;
 import com.employee.management.service.DepartmentService;
-import com.employee.management.service.MetricsService;
+//import com.employee.management.service.MetricsService;
 
 
 @RestController
@@ -29,14 +29,14 @@ public class DepartmentController {
 	@Autowired
 	private DepartmentService departmentService;
 	
-	@Autowired
-	private MetricsService metricsService;
+	//@Autowired
+	//private MetricsService metricsService;
 	
 	// displaying list of all department
 		@GetMapping("/departments")
 		public List<Department> getAllDepartment(){
-	        metricsService.recordHttpRequest("/departments");
-	        metricsService.recordEndpointHit("/departments");
+	        //metricsService.recordHttpRequest("/departments");
+	       // metricsService.recordEndpointHit("/departments");
 			return departmentService.getAllDepartments();
 		}
 

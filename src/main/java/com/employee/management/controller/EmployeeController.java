@@ -22,7 +22,7 @@ import com.employee.management.service.EmployeeService;
 
 import com.employee.management.model.Employee;
 import com.employee.management.service.EmployeeService;
-import com.employee.management.service.MetricsService;
+//import com.employee.management.service.MetricsService;
 
 @RestController
 public class EmployeeController {
@@ -32,14 +32,14 @@ public class EmployeeController {
 	@Autowired
 	private EmployeeService employeeService;
 
-	@Autowired
-	private MetricsService metricsService;
+	//@Autowired
+	//private MetricsService metricsService;
 
 	// displaying list of all employees
 	@GetMapping("/employees")
 	public List<Employee> getAllEmployee() {
-        metricsService.recordHttpRequest("/employees");
-        metricsService.recordEndpointHit("/employees");
+      //  metricsService.recordHttpRequest("/employees");
+      //  metricsService.recordEndpointHit("/employees");
 		return employeeService.getAllEmployees();
 	}
 

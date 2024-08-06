@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.employee.management.model.Salary;
 import com.employee.management.service.SalaryService;
-import com.employee.management.service.MetricsService;
+//import com.employee.management.service.MetricsService;
 
 @RestController
 public class SalaryController {
@@ -30,14 +30,14 @@ public class SalaryController {
 	@Autowired
 	private SalaryService salaryService;
 	
-	@Autowired
-	private MetricsService metricsService;
+	//@Autowired
+	//private MetricsService metricsService;
 	
 	// displaying list of all salary
 		@GetMapping("/salary")
 		public List<Salary> getAllSalary(){
-	        metricsService.recordHttpRequest("/salary");
-	        metricsService.recordEndpointHit("/salary");
+	     //   metricsService.recordHttpRequest("/salary");
+	     //   metricsService.recordEndpointHit("/salary");
 			return salaryService.getAllSalaries();
 		}
 
