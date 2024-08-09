@@ -1,7 +1,6 @@
 package com.employee.management.model;
 
-import org.antlr.v4.runtime.misc.NotNull;
-
+import jakarta.validation.constraints.NotNull;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,84 +11,81 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table (name = "employee")
+@Table(name = "employee")
 public class Employee {
 
-	@Id
-	@Column(name="employee_id")
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int employeeID;
-	
-	@Column(name="first_name")
-	private String firstName;
-	
-	@Column(name="last_name")
-	private String lastName;
-	
-	@NotNull
-	@ManyToOne
-	@JoinColumn(name="department_id")
-	private Department department;
-	
-	@ManyToOne
-	@JoinColumn(name="salary_id")
-	private Salary salary;
-	
-	public Employee(){
-		
-	}
-	
-	public Employee(String firstName, String lastName, Department department) {
-		super();
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.department = department;
-	}
-	
-	public int getEmployeeID() {
-		return employeeID;
-	}
+    @Id
+    @Column(name = "employee_id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int employeeID;
 
-	public void setEmployeeID(int employeeID) {
-		this.employeeID = employeeID;
-	}
+    @Column(name = "first_name")
+    private String firstName;
 
-	public String getFirstName() {
-		return firstName;
-	}
+    @Column(name = "last_name")
+    private String lastName;
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
+    @NotNull
+    @ManyToOne
+    @JoinColumn(name = "department_id")
+    private Department department;
 
-	public String getLastName() {
-		return lastName;
-	}
+    @ManyToOne
+    @JoinColumn(name = "salary_id")
+    private Salary salary;
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
+    public Employee() {
+    }
 
-	@Override
-	public String toString(){
-		return String.format("Employee [employeeID = %d, firstName = %s, lastName = %s, department_ID= %d", employeeID, firstName, lastName, department.getDepartment_ID());
-	}
+    public Employee(String firstName, String lastName, Department department) {
+        super();
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.department = department;
+    }
 
-	public Department getDepartment() {
-		return department;
-	}
+    public int getEmployeeID() {
+        return employeeID;
+    }
 
-	public void setDepartment(Department department) {
-		this.department = department;
-	}
-	
-	public Salary getSalary() {
-		return salary;
-	}
+    public void setEmployeeID(int employeeID) {
+        this.employeeID = employeeID;
+    }
 
-	public void setSalary(Salary salary) {
-		this.salary = salary;
-	}
+    public String getFirstName() {
+        return firstName;
+    }
 
-	
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Employee [employeeID = %d, firstName = %s, lastName = %s, department_ID = %d]", employeeID, firstName, lastName, department.getDepartment_ID());
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
+    public Salary getSalary() {
+        return salary;
+    }
+
+    public void setSalary(Salary salary) {
+        this.salary = salary;
+    }
 }
